@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: push m5frontendacr.azurecr.io/web-client:v1
+        image: m5frontendacr.azurecr.io/web-client:v1
         ports:
         - containerPort: 3000
         resources:
@@ -24,5 +24,3 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "200m"
-
-
