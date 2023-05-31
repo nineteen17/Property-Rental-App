@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: m5frontendacr.azurecr.io/web-client:v3  
+        image: m5frontendacr.azurecr.io/web-client:9b7dc5c1eb020ff1aef91ff70f602f51babbe19e
         ports:
         - containerPort: 3000
         resources:
