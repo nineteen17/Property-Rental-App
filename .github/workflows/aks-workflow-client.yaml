@@ -39,6 +39,9 @@ jobs:
             - buildImage
         steps:
             - uses: actions/checkout@v3
+            - name: Update image in Kubernetes manifest
+              run: |
+                sed -i 's|m5frontendacr.azurecr.io/web-client:.*|m5frontendacr.azurecr.io/web-client:${{ github.sha }}|g' ./k8s/frontend/frontend-deployment.yaml
             - uses: azure/login@v1.4.3
               name: Azure login
               with:
