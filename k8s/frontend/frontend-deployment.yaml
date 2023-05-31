@@ -24,3 +24,9 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "200m"
+        env:
+        - name: VITE_BACKEND_URL
+          valueFrom:
+            secretKeyRef:
+              name: backend-url
+              key: VITE_BACKEND_URL
