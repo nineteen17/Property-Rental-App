@@ -3,7 +3,6 @@ import useHello from "../hooks/useHello";
 const Hello = () => {
   const { data, isLoading, isError } = useHello();
 
-
   return (
     <div>
       {isLoading && <div>Loading...</div>}
