@@ -10,7 +10,7 @@ let PropertySchema = new mongoose.Schema({
   bedrooms: {type: Number, require: true},
   squareMeters: {type:Number, require: true},
   parkings: {type:Number},
-  petFriendly: {type:Boolean},
+  petFriendly: {type:String, default:"Not allowed"},
   outDoorArea: {type:Boolean},
   description: { type: String },
   propertyType: {type: String},
@@ -21,7 +21,6 @@ let PropertySchema = new mongoose.Schema({
   imgUrls: {type:Array},
   name: {type: String, require: true},//listing name
   price: {type: Number},
-  type: {type: String,require: true},//sale or rent
   listingTime: {
     type: Date,
     required: true,
@@ -29,4 +28,4 @@ let PropertySchema = new mongoose.Schema({
   }
 })
 
-export default mongoose.model('Document', PropertySchema)
+export default mongoose.model('Property', PropertySchema)

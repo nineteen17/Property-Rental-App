@@ -1,5 +1,4 @@
 import Property from '../models/Property'
-//import { PropertyType } from '../types/Property'
 
 
 export const createOneProperty = async (body: any) => {
@@ -27,7 +26,7 @@ export const deleteOnePropertyById = async (id: string) => {
   return deleteProperty
 }
 
-export const updateOneProperty = async (id: string, body: any) => {
+export const updateEntireProperty = async (id: string, body: any) => {
   const updateProperty = await Property.findByIdAndUpdate(
     id,
     { $set: body },
@@ -35,3 +34,15 @@ export const updateOneProperty = async (id: string, body: any) => {
   )
   return updateProperty
 }
+
+export const updatePropertyPartial = async (id: string, body: any) => {
+  const updateResult  = await Property.updateOne({ _id: id }, { $set: body });
+
+  if (updateResult.matchedCount === 0) {
+    throw { error: 'The Property cannot be found.' };
+  }
+
+
+  const updatedProperty = await Property.findById(id);
+  return updatedProperty;
+};
