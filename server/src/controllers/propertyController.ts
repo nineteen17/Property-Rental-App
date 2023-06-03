@@ -31,6 +31,17 @@ export const getOneProperty = async (req: Request, res: Response) => {
   }
 }
 
+export const getPropertiesByFilter = async (req: Request, res: Response) => {
+  const queryParams = req.query
+  
+  try {
+    const properties = await propertyService.getPropertiesByFilter(queryParams)
+    res.status(200).json(properties)
+  } catch (e) {
+    res.status(404).json({"error":"The properties cannot be found."+`${queryParams}`})
+  }
+}
+
 export const deleteOneProperty = async (req: Request, res: Response) => {
   const id = req.params.id
   

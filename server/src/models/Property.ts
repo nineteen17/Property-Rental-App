@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
+import {IProperty} from "../types/Property"
 
-let PropertySchema = new mongoose.Schema({
+let PropertySchema = new mongoose.Schema<IProperty>({
   location: { 
     address:{type: String, require: true},
     suburb:{type: String, require: true},
@@ -8,7 +9,6 @@ let PropertySchema = new mongoose.Schema({
    },
   bathrooms: {type: Number, require: true},
   bedrooms: {type: Number, require: true},
-  squareMeters: {type:Number, require: true},
   parkings: {type:Number},
   petFriendly: {type:String, default:"Not allowed"},
   outDoorArea: {type:Boolean},
@@ -18,7 +18,7 @@ let PropertySchema = new mongoose.Schema({
     lat:{type:Number},
     lng:{type:Number}
   },
-  imgUrls: {type:Array},
+  imgUrls: { type: [String] },
   name: {type: String, require: true},//listing name
   price: {type: Number},
   listingTime: {

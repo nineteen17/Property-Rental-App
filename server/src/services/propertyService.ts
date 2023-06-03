@@ -8,7 +8,8 @@ export const createOneProperty = async (body: any) => {
 }
 
 export const getAllProperties = async () => {
-  const Properties = await Property.find()
+  const sort = {listingTime: -1} as any
+  const Properties = await Property.find().sort(sort)
   return Properties
 }
 
@@ -20,6 +21,20 @@ export const getOnePropertyById = async (id: string) => {
   }
   return matchedProperty
 }
+
+export const getPropertiesByFilter = async (query: any) => {
+  const q = {
+    propertyType:{$gte: parseInt(query.propertyType) || ""},
+    bathrooms: { $gte: parseInt(query.bathrooms) || 0 },
+    bedrooms: { $gte: parseInt(query.bedrooms) || 0 },
+    petFriendly: query.petFriendly || "Not allowed"
+  }
+  const sort = {price: parseInt(query.priceOrder) || 1} as any
+
+  const expectedProperties = await Property.find(q).sort(sort).exec();
+  return expectedProperties
+}
+ 
 
 export const deleteOnePropertyById = async (id: string) => {
   const deleteProperty = await Property.findByIdAndDelete(id)
@@ -41,7 +56,6 @@ export const updatePropertyPartial = async (id: string, body: any) => {
   if (updateResult.matchedCount === 0) {
     throw { error: 'The Property cannot be found.' };
   }
-
 
   const updatedProperty = await Property.findById(id);
   return updatedProperty;

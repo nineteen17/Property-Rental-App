@@ -3,11 +3,13 @@ import * as PropertyController from '../controllers/propertyController'
 
 const router = express.Router()
 
+router.get('/find', PropertyController.getPropertiesByFilter)
+
+router.get('/:id', PropertyController.getOneProperty)
+
 router.get('/', PropertyController.getAllProperties)
 
 router.post('/', PropertyController.createOneProperty)
-
-router.get('/:id', PropertyController.getOneProperty)
 
 router.delete('/:id', PropertyController.deleteOneProperty)
 
