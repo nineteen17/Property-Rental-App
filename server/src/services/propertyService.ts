@@ -23,13 +23,15 @@ export const getOnePropertyById = async (id: string) => {
 }
 
 export const getPropertiesByFilter = async (query: any) => {
+  const order = query.priceOrder === "Highest price"? -1 : 1;
+
   const q = {
     propertyType:{$gte: parseInt(query.propertyType) || ""},
     bathrooms: { $gte: parseInt(query.bathrooms) || 0 },
     bedrooms: { $gte: parseInt(query.bedrooms) || 0 },
     petFriendly: query.petFriendly || "Not allowed"
   }
-  const sort = {price: parseInt(query.priceOrder) || 1} as any
+  const sort = {price: order} as any
 
   const expectedProperties = await Property.find(q).sort(sort).exec();
   return expectedProperties

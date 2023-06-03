@@ -38,7 +38,7 @@ export const getPropertiesByFilter = async (req: Request, res: Response) => {
     const properties = await propertyService.getPropertiesByFilter(queryParams)
     res.status(200).json(properties)
   } catch (e) {
-    res.status(404).json({"error":"The properties cannot be found."+`${queryParams}`})
+    res.status(404).json({"error":"The properties cannot be found."})
   }
 }
 
