@@ -1,3 +1,4 @@
+import { log } from 'console'
 import User, { UserDocument } from '../models/User'
 
 export const findUserById = async (
@@ -20,6 +21,13 @@ export const createUser = async (
   refreshToken: string
 ): Promise<UserDocument> => {
   try {
+    // Simple validation checks
+    if (!microsoftId) throw new Error('MicrosoftId is required');
+    if (!displayName) throw new Error('DisplayName is required');
+    if (!email) throw new Error('Email is required');
+    if (!accessToken) throw new Error('AccessToken is required');
+    if (!refreshToken) throw new Error('RefreshToken is required');
+
     const user = new User({
       microsoftId,
       displayName,
@@ -27,6 +35,9 @@ export const createUser = async (
       accessToken,
       refreshToken,
     })
+
+    // Log the user data before saving
+    console.log('Creating user:', user);
 
     return await user.save()
   } catch (error) {

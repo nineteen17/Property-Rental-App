@@ -11,7 +11,6 @@ dotenv.config()
 const app = express()
 
 // Middleware
-app.use(cors())
 // allow cross origin requests from localhost:3000
 app.use(
   cors({

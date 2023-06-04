@@ -46,10 +46,11 @@ passport.use(
       profile: any,
       done: any
     ) => {
-      console.log('MicrosoftStrategy callback profile:', profile)
-      const { id, displayName, emails } = profile
-      const email = emails[0].value
-      let user = await findUserByMicrosoftId(id)
+      console.log('MicrosoftStrategy callback profile:', profile); 
+
+      const { id, displayName, emails } = profile;
+      const email = emails[0].value;
+      let user = await findUserByMicrosoftId(id);
 
       if (!user) {
         user = await createUser(
@@ -58,30 +59,35 @@ passport.use(
           email,
           accessToken,
           refreshToken
-        )
+        );
       }
 
-      console.log('MicrosoftStrategy callback user:', user)
-      done(null, user)
+      console.log('MicrosoftStrategy callback user:', user); // New line added
+      done(null, user);
     }
   )
-)
+);
+
 
 // Add Passport middleware
 sessionMiddleware.use(passport.initialize())
 sessionMiddleware.use(passport.session())
 
 passport.serializeUser((user: any, done: any) => {
-  done(null, user)
-})
+  console.log('Serialize User: ', user); // New line added
+  done(null, user);
+});
 
 passport.deserializeUser(async (id: any, done: any) => {
   try {
-    const user = await findUserById(id)
-    done(null, user)
+    console.log('Deserialize User ID: ', id); // New line added
+    const user = await findUserById(id);
+    console.log('Deserialized User: ', user); // New line added
+    done(null, user);
   } catch (err) {
-    done(err, null)
+    done(err, null);
   }
-})
+});
+
 
 export default sessionMiddleware
