@@ -1,35 +1,45 @@
-import React, { useEffect } from 'react';
-import { useAuth } from '../../../hooks/useAuth';
-import { useStore } from '../../../store/Store';
-import { useNavigate } from 'react-router-dom';
+import "./Login.scss";
+import React, { useState, FormEvent } from "react";
+import { useAuthUser } from "../../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+
+
 const Login: React.FC = () => {
-  const { login, getUser, logout } = useAuth();
-  const user = useStore(state => state.currentUser); 
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const authMutation = useAuthUser();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (user) {
-      getUser.refetch(); // Fetch user data only if user exists
-    }
-  }, [user, getUser]);
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
 
-  const handleLogin = async () => {
-    await login(); // Wait for login to complete
-    if (user) {
-      navigate('/'); // Navigate to home page if user exists
+    try {
+      await authMutation.mutateAsync({ email, password }); // pass an object that matches the UserData type
+      navigate("/");
+    } catch (error) {
+      console.error(error);
     }
-  };
-
-  const handleLogout = () => {
-    logout.mutate();
   };
 
   return (
-    <div>
-      <button onClick={handleLogin}>Login with Microsoft</button>
-      <button onClick={handleLogout}>Logout</button>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+        required
+      />
+      <button type="submit">Log In</button>
+    </form>
   );
 };
 
-export default Login
+export default Login;

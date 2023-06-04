@@ -1,8 +1,6 @@
-export interface User {
-    id: string;
-    displayName: string;
-    email: string;
-    accessToken: string;
-    refreshToken: string;
-  }
-  
+export interface UserData {
+  email: string;
+  password: string;
+  name?: string;
+  wishlist?: any[];
+}

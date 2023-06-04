@@ -1,12 +1,13 @@
-import { create }from "zustand";
-import { User } from "../types/types";
+import { create } from "zustand";
 
 type Store = {
-  currentUser: User | null;
-  setCurrentUser: (user: User | null) => void;
+  user: null | { _id: string; name: string; email: string };
+  setUser: (user: { _id: string; name: string; email: string }) => void;
+  clearUser: () => void;
 };
 
-export const useStore = create<Store>((set) => ({
-  currentUser: null,
-  setCurrentUser: (user) => set({ currentUser: user }),
+export const useUserStore = create<Store>((set) => ({
+  user: null,
+  setUser: (user) => set({ user }),
+  clearUser: () => set({ user: null }),
 }));

@@ -1,42 +1,44 @@
-import { useQuery, useMutation } from 'react-query';
-import axios from 'axios';
-import { useStore } from '../store/Store';
-import { User } from '../types/types';
+import axios from "axios";
+import { useMutation, useQuery, useQueryClient } from "react-query";
+import { UserData } from "../types/types";
 
-export const useAuth = () => {
-  const setCurrentUser = useStore((state) => state.setCurrentUser);
-  const baseUrl = import.meta.env.VITE_LOCAL_URL;
+const baseUrl =
+  import.meta.env.VITE_LOCAL_URL || import.meta.env.VITE_BACKEND_URL;
 
-  const axiosInstance = axios.create({
-    withCredentials: true, // Include credentials (cookies) with requests
+export const useRegisterUser = () => {
+  return useMutation(async (userData: any) => {
+    const { data } = await axios.post(`${baseUrl}/register`, userData);
+    return data;
   });
+};
 
-  const login = () => {
-    window.location.href = `${baseUrl}/auth/microsoft`;
-  };
-
-  const getUser = useQuery<User, Error>('user', async () => {
-    try {
-      const { data } = await axiosInstance.get<User>(`${baseUrl}/auth/user`);
-      setCurrentUser(data);
-      return data;
-    } catch (error) {
-      console.error(error);
-      throw new Error('Error fetching user data');
-    }
-  }, {
-    refetchOnWindowFocus: false,
+export const useAuthUser = () => {
+  return useMutation(async (userData: UserData) => {
+    const { data } = await axios.post(`${baseUrl}/auth`, userData);
+    return data;
   });
+};
 
-  const logout = useMutation(async () => {
-    try {
-      await axiosInstance.post(`${baseUrl}/auth/logout`);
-      setCurrentUser(null);
-    } catch (error) {
-      console.error(error);
-      throw new Error('Error during logout');
-    }
+export const useLogoutUser = () => {
+  const queryClient = useQueryClient();
+
+  return useMutation(async () => {
+    const { data } = await axios.post(`${baseUrl}/logout`);
+    queryClient.invalidateQueries("userProfile");
+    return data;
   });
+};
 
-  return { login, getUser, logout };
+export const useUserProfile = () => {
+  return useQuery("userProfile", async () => {
+    const { data } = await axios.get(`${baseUrl}/profile`);
+    return data;
+  });
+};
+
+export const useAddToWishlist = () => {
+  return useMutation(async (propertyId: string) => {
+    const { data } = await axios.post(`${baseUrl}/wishlist/${propertyId}`);
+    return data;
+  });
 };

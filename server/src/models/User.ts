@@ -1,18 +1,56 @@
-import mongoose, { Document, Schema } from 'mongoose';
-import { PropertyDocument } from './Property'; // Assuming this is the name and location of your Property model
+import mongoose, { Schema, Document } from 'mongoose';
+import bcrypt from 'bcrypt';
+import { IProperty } from '../types/Property';
 
-interface UserDocument extends Document {
-  googleId: string;
+
+interface IUser extends Document {
+  name: string;
   email: string;
   password: string;
-  watchlist: PropertyDocument[];
+  matchPassword: (enteredPassword: string) => Promise<boolean>;
+  wishlist?: IProperty[];
 }
 
-const userSchema = new Schema<UserDocument>({
-  googleId: { type: String },
-  email: { type: String, required: true },
-  password: { type: String },
-  watchlist: [{ type: Schema.Types.ObjectId, ref: 'Property' }],
+const userSchema: Schema<IUser> = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    wishlist: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Property',
+      },
+    ],
+  },
+  {
+    timestamps: true,
+  }
+);
+
+userSchema.methods.matchPassword = async function (enteredPassword: string) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+
+userSchema.pre<IUser>('save', async function (next) {
+  if (!this.isModified('password')) {
+    next();
+  }
+
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
 });
 
-export default mongoose.model<UserDocument>('User', userSchema);
+const User = mongoose.model<IUser>('User', userSchema);
+
+export default User; 
