@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const Home = () => {
     return (
       <div>Home</div>
@@ -5,3 +6,16 @@ const Home = () => {
   }
   
   export default Home
+=======
+
+
+
+
+const Home = () => {
+  return (
+    <div>Home</div>
+  )
+}
+
+export default Home
+>>>>>>> develop

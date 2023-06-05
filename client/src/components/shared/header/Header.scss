@@ -1,0 +1,35 @@
+.Header {
+  display: flex;
+  flex-direction: row;
+ 
+  height: 15rem;
+  background-color: black;
+  margin-left: 15rem;
+  margin-right: 15rem;
+
+  .Header__logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0;
+    color: white;
+  }
+
+  .Header__nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 2rem;
+    margin: 0;
+
+    .Header__nav__item {
+      margin: 0 1rem;
+      padding: 0;
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
