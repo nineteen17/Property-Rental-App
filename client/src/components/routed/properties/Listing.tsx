@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import ListingItem from './ListingItem.tsx'
 import axios from "axios"
 
-import "./Listing.css"
+import "./Listing.scss"
 
 const Listing = () => {
   const baseUrl = import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_LOCAL_URL;

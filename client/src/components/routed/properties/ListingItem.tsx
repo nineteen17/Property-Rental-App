@@ -1,5 +1,5 @@
 import {Listing} from "../../../types/Listing"
-import './ListingItem.css'
+import './ListingItem.scss'
 
 const ListingItem = ({ listing }: { listing: Listing }) => {
   return (
