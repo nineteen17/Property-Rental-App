@@ -9,11 +9,6 @@ dotenv.config()
 
 import propertyRouter from './routes/properties'
 
-import cors from 'cors'
-import env from 'dotenv'
-
-env.config()
-
 
 const app = express()
 
