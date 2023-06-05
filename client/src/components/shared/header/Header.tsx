@@ -22,14 +22,14 @@ const Header = () => {
       navigate('/login');
     }
     else {
-      navigate('/wishlist');
+      navigate('/watchlist');
     }
   }
 
   const handleLogout = () => {
     logoutMutation.mutate(undefined, {
       onSuccess: () => {
-        useUserStore.getState().clearUser(); // Clear the user state
+        useUserStore.getState().clearUser(); 
         navigate("/");
       }
     });
