@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className="Header" >
       <div className="Header__logo">
-        <h1>Metro</h1>
+        <img src="https://metronz.co.nz/wp-content/uploads/2022/09/header-logo.svg"  />
         </div>
         <div className="Header__nav">
           <div className="Header__nav__item" >Services</div>
