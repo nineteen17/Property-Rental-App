@@ -1,0 +1,22 @@
+.currentListingContainer {
+  display: flex;
+  width: 86%;
+  margin-left: 7%;
+  margin-right: 7%;
+  
+
+  .currentListingContainer__left-section {
+    width: 25%;
+    background-color: blueviolet;
+  }
+
+  .currentListingContainer__right-section {
+    flex-grow: 1;
+    width:60%;
+    
+  }
+}
+
+
+
+

@@ -1,4 +1,4 @@
-import './CurrentListing.css'
+import './CurrentListing.scss'
 import Listing from '../components/routed/properties/Listing'
 import PropertiesFilter from '../components/routed/properties/PropertiesFilter'
 

@@ -5,7 +5,7 @@ import axios from "axios"
 import "./Listing.scss"
 
 const Listing = () => {
-  const baseUrl = import.meta.env.VITE_BACKEND_URL || import.meta.env.VITE_LOCAL_URL;
+  const baseUrl = import.meta.env.VITE_LOCAL_URL;
   const [listingArr, setListingArr] = useState([])
   const [count, setCount] = useState(8)
   const [loadMoreArr, setLoadMoreArr] = useState([])
@@ -20,11 +20,12 @@ const Listing = () => {
       }
     };
     getProperties();
-  }, []);
+  }, [baseUrl]);
 
   
   return (
     <div className="listing">
+      <h1 className="listing--header">Current property available</h1>
       <div className="listing__listingContainer">
         {listingArr.slice(0,6).map((l) => {
           return <ListingItem listing={l} />;
