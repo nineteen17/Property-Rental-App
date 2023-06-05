@@ -9,7 +9,7 @@ const Watchlist = () => {
   if (user) {
     return (
       <div>
-        <h3>Wishlist:</h3>
+        <h3>Watchlist:</h3>
         {userProfile?.wishlist?.map((property: any, index: any) => (
           <div key={index}>
             <Link to={`/property/${property._id}`}>{property.name}</Link>
