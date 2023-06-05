@@ -28,4 +28,7 @@ let PropertySchema = new mongoose.Schema<IProperty>({
   }
 })
 
+
+
 export default mongoose.model('Property', PropertySchema)
+

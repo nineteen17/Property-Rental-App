@@ -1,17 +1,34 @@
 import express from 'express'
+
+import cors from 'cors'
+import dotenv from 'dotenv'
+
+import authRoutes from './routes/AuthRoutes'
+
+dotenv.config()
+
 import propertyRouter from './routes/properties'
-import helloRouter from './routes/properties'
+
 import cors from 'cors'
 import env from 'dotenv'
 
 env.config()
 
+
 const app = express()
+
+// Middleware
+
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    credentials: true,
+  })
+)
 app.use(express.json())
-app.use(cors())
 
-
-app.use("/api/hello", helloRouter)
+// Routes
+app.use(authRoutes)
 app.use("/api/properties", propertyRouter)
 
 export default app
