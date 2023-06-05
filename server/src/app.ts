@@ -1,10 +1,19 @@
 import express from 'express'
+
 import cors from 'cors'
 import dotenv from 'dotenv'
 
 import authRoutes from './routes/AuthRoutes'
 
 dotenv.config()
+
+import propertyRouter from './routes/properties'
+
+import cors from 'cors'
+import env from 'dotenv'
+
+env.config()
+
 
 const app = express()
 
@@ -20,5 +29,6 @@ app.use(express.json())
 
 // Routes
 app.use(authRoutes)
+app.use("/api/properties", propertyRouter)
 
 export default app
