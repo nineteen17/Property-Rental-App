@@ -21,15 +21,14 @@ const Home = () => {
         </div>
         
         <div className="Home__awards-video-container__video">
-          <iframe 
-            src="https://player.vimeo.com/video/833160499?h=dd34b3b2ec&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-            width="192" 
-            height="108" 
-            style={{ border: 0 }} 
-            allow="autoplay; fullscreen; picture-in-picture" 
-            
-            allowFullScreen>
-          </iframe>
+        <iframe
+            src="https://player.vimeo.com/video/833160499?h=dd34b3b2ec&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&portrait=0&byline=0"
+            width="192"
+            height="108"
+            style={{ border: 0 }}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+          ></iframe>
         </div>
         </div>
         <div className="Home__form-container">
