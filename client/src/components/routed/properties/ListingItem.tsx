@@ -46,12 +46,12 @@ const ListingItem = ({ listing }: { listing: Listing }) => {
             </p> 
           </div>
           
-          <div className="listingItemContainer__right-section__section__detailsContainer__details">
+          {listing.parkings > 0 && <div className="listingItemContainer__right-section__section__detailsContainer__details">
            <p>
            <MdOutlineGarage className="listingItemContainer__right-section__detailsContainer__details--icons"/>
            {listing.parkings}
             </p> 
-          </div>
+          </div>}
           {listing.petFriendly === "Allowed" && 
           <div className="listingItemContainer__right-section__section__detailsContainer__details">
            <p>

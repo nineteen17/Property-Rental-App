@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react"
 import ListingItem from './ListingItem.tsx'
 import axios from "axios"
-
 import "./Listing.scss"
 
-const Listing = () => {
+const Listing = ({ searchQuery }:{searchQuery:string}) => {
   const baseUrl = import.meta.env.VITE_LOCAL_URL;
   const [listingArr, setListingArr] = useState([])
   const [count, setCount] = useState(8)
@@ -13,14 +12,18 @@ const Listing = () => {
   useEffect(() => {
     const getProperties = async () => {
       try {
-        const res = await axios.get(`${baseUrl}/api/properties`);
+        const res = await axios.get(
+          searchQuery.length > 0 ?
+          `${baseUrl}/api/properties/find?${searchQuery}`
+          :`${baseUrl}/api/properties`
+        );
         setListingArr(res.data);
       } catch (err) {
         throw new Error("Failed to fetch properties");
       }
     };
     getProperties();
-  }, [baseUrl]);
+  }, [baseUrl,searchQuery]);
 
   
   return (
