@@ -3,7 +3,6 @@ import React, { useState, FormEvent } from "react";
 import { useAuthUser } from "../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 
-
 const Login: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -20,25 +19,46 @@ const Login: React.FC = () => {
       console.error(error);
     }
   };
+  const handleHome = () => {
+    navigate("/");
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        required
-      />
-      <button type="submit">Log In</button>
-    </form>
+    <div className="Login-bg">
+    <div className="Login">
+      <div className="Login__breadcrumb">
+        <span className="Login__breadcrumb__link" onClick={handleHome } >Home</span> /
+        <span className="Login__breadcrumb__link">Login</span>
+      </div>
+      <div className="Login__form">
+        <h2>Log In</h2>
+        <form onSubmit={handleSubmit}>
+          <label>Your email address</label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Type here ..."
+            required
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Type here ..."
+            required
+          />
+          <label className="forgot" >Forgot password ?</label>
+          <span className="Login__form__button-container">
+          <button type="submit">Log In</button>
+          <button type="button">Create Account</button>
+          </span>
+        </form>
+        <label>Call 09 391 4642 for help</label>
+      </div>
+    </div>
+    </div>
   );
 };
 
