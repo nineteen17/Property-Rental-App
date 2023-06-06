@@ -1,7 +1,13 @@
 import "./Home.scss";
-
+import { useNavigate } from "react-router-dom";
+import homeImg from "../../../assets/tristan-dixon-H9ZJLVkkjzs-unsplash.jpg";
 
 const Home = () => {
+const navigate = useNavigate();
+
+const handleRent = () => {
+  navigate("/rent");
+};
   return (
     <div className="Home">
       <div className="Home__background-image">
@@ -10,7 +16,7 @@ const Home = () => {
         <h1>expertise and skills</h1>
       </div>
       <div className="Home__buttons-container">
-        <div className="Home__buttons-container__button">View our listings for rent</div>
+        <div className="Home__buttons-container__button" onClick={handleRent} >View our listings for rent</div>
         <div className="Home__buttons-container__button">Our services</div>
       </div>
       <div className="Home__awards-video-container">
@@ -33,7 +39,7 @@ const Home = () => {
         </div>
         <div className="Home__form-container">
           <div className="Home__form-container__image">
-            <img src="./public/tristan-dixon-H9ZJLVkkjzs-unsplash.jpg"  />
+            <img src={homeImg} />
           </div>
           <div className="Home__form-container__form">
             <h2>Need help ?</h2>
@@ -52,3 +58,4 @@ const Home = () => {
 };
 
 export default Home;
+
