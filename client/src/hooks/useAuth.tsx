@@ -4,6 +4,7 @@ import { UserData } from "../types/types";
 import { useUserStore } from "../store/Store";
 
 
+axios.defaults.withCredentials = true;
 
 const baseUrl =
   import.meta.env.VITE_LOCAL_URL || import.meta.env.VITE_BACKEND_URL;
@@ -20,8 +21,9 @@ export const useAuthUser = () => {
 
   return useMutation(async (userData: UserData) => {
     const { data } = await axios.post(`${baseUrl}/auth`, userData);
+    console.log("Server response: ", data);
 
-    setUser(data.user);
+    setUser(data);
     return data;
 
   });
