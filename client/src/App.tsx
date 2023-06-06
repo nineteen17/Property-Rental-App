@@ -11,6 +11,7 @@ import Login from "./components/routed/login/Login";
 import Watchlist from "./components/routed/watchlist/Watchlist";
 import CurrentListings from "./pages/CurrentListings";
 import Application from "./pages/Application";
+import ApplicationNext from "./pages/ApplicationNext";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/rent" element={<CurrentListings />} />
           <Route path="/apply" element={<Application />} />
+          <Route path="/apply-next" element={<ApplicationNext />} />
         </Routes>
         <Footer />
       </div>
