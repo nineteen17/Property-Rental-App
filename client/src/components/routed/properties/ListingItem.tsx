@@ -2,9 +2,11 @@ import {Listing} from "../../../types/Listing"
 import './ListingItem.scss'
 import {FaBed, FaShower} from 'react-icons/fa'
 import {MdOutlineGarage, MdPets} from 'react-icons/md'
+import {Link} from 'react-router-dom';
 
 const ListingItem = ({ listing }: { listing: Listing }) => {
   return (
+    <Link to={`/properties/${listing._id}`}> 
     <div key={listing._id} id={listing._id} className="listingItemContainer">
       <div className="listingItemContainer__left-section">
         <a href={listing.imgUrls[0]}>
@@ -64,6 +66,7 @@ const ListingItem = ({ listing }: { listing: Listing }) => {
         </div>
       </div>
     </div>
+    </Link>
   )
 }
 
