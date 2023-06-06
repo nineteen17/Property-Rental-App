@@ -10,7 +10,7 @@ import Login from "./components/routed/login/Login";
 //import Register from "./components/routed/register/Register";
 import Watchlist from "./components/routed/watchlist/Watchlist";
 import CurrentListings from "./pages/CurrentListings";
-
+import ListingsId from "./components/routed/listings-id/ListingsId";
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />          
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/rent" element={<CurrentListings />} />
+          <Route path="/properties/:id" element={<ListingsId /> } />
         </Routes>
         <Footer />
       </div>
