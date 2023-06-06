@@ -4,11 +4,9 @@ import cors from 'cors'
 import dotenv from 'dotenv'
 
 import authRoutes from './routes/AuthRoutes'
+import propertyRouter from './routes/propertiesRoutes'
 
 dotenv.config()
-
-import propertyRouter from './routes/properties'
-
 
 const app = express()
 app.use(cookieParser());

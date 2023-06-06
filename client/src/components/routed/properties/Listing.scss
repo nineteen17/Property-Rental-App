@@ -1,0 +1,27 @@
+.listing {
+  .listing--header {
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 50px;
+  }
+  .listing__buttonContainer {
+    .listing__buttonContainer--button {
+      margin-top: 40px;
+      margin-bottom: 50px;
+      margin-left: 150px;
+      width: 40%;
+      height: 50px;
+      border-radius: 5px;
+      background-color: #76a8d4;
+      font-size: larger;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.01);
+        box-shadow: 2px 2px 2px rgb(72, 86, 91);
+      }
+    }
+  }
+}
