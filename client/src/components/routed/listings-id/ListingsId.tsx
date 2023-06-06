@@ -61,7 +61,7 @@ const ListingsId = () => {
       <div className="property-details">
         <div className="top">
           <div className="images">
-            <h1>{property.location["address"]}</h1>
+            <h1>{property.location["address"]}{property.location["suburb"]}, {property.location["city"]}</h1>
             <img
               className="main-image"
               src={selectedImage}
@@ -82,7 +82,7 @@ const ListingsId = () => {
           <div className="right-side">
             <button>Apply here</button>
             <button>Book a viewing</button>
-            <div ref={mapRef} style={{ width: "400px", height: "200px" }}></div>
+            <div ref={mapRef} style={{ width: "400px", height: "250px" }}></div>
           </div>
         </div>
         <div className="bottom">
