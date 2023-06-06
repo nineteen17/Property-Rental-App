@@ -10,6 +10,7 @@ import Login from "./components/routed/login/Login";
 //import Register from "./components/routed/register/Register";
 import Watchlist from "./components/routed/watchlist/Watchlist";
 import CurrentListings from "./pages/CurrentListings";
+import Application from "./pages/Application";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" element={<Login />} />          
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/rent" element={<CurrentListings />} />
+          <Route path="/apply" element={<Application />} />
         </Routes>
         <Footer />
       </div>

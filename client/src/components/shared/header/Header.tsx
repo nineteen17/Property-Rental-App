@@ -43,8 +43,16 @@ const Header = () => {
       </div>
       <div className="Header__nav">
         <div className="Header__nav__item">Services</div>
-        <div className="Header__nav__item">Apply</div>
-        <div className="Header__nav__item">Listings</div>
+        <div className="Header__nav__item"
+          onClick={() => {navigate('/apply')}}
+        >
+          Apply
+        </div>
+        <div className="Header__nav__item"
+           onClick={() => {navigate('/rent')}}
+        >
+          Listings
+        </div>
         <div className="Header__nav__item">About Us</div>
         <div className="Header__nav__item">Contact</div>
         <div className="Header__nav__item" onClick={handleWishlist}>Watchlist</div>
