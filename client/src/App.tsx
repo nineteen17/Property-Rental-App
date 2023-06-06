@@ -11,6 +11,7 @@ import Login from "./components/routed/login/Login";
 import Watchlist from "./components/routed/watchlist/Watchlist";
 import CurrentListings from "./pages/CurrentListings";
 
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -18,8 +19,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          
+          <Route path="/login" element={<Login />} />          
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/rent" element={<CurrentListings />} />
         </Routes>

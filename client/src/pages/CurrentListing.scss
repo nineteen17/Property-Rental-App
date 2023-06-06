@@ -3,52 +3,46 @@
   width: 86%;
   margin-left: 7%;
   margin-right: 7%;
-  
 
   .currentListingContainer__left-section {
     width: 20%;
     padding: 30px;
 
-    .currentListingContainer__left-section__container{
+    .currentListingContainer__left-section__container {
       margin-top: 70px;
-      .currentListingContainer__left-section__container--p{
+      .currentListingContainer__left-section__container--p {
         font-size: larger;
       }
 
-      .currentListingContainer__left-section__container--select{
+      .currentListingContainer__left-section__container--select {
         margin-top: -15px;
         width: 100%;
-        height:50px;
+        height: 50px;
         border-radius: 5px;
         font-size: large;
       }
 
-      .currentListingContainer__left-section__container--btn{
-        margin-top: 50px;
+      .currentListingContainer__left-section__container--btn {
+        margin-top: 40px;
         width: 100%;
         height: 50px;
         border-radius: 5px;
-        background-color: #76A8D4;
+        background-color: #76a8d4;
         font-size: larger;
         font-weight: bold;
         border: none;
         cursor: pointer;
 
-        &:hover{
+        &:hover {
           transform: scale(1.01);
+          box-shadow: 2px 2px 2px rgb(72, 86, 91);
         }
       }
     }
-    
   }
 
   .currentListingContainer__right-section {
     flex-grow: 1;
-    width:70%;
-    
+    width: 70%;
   }
 }
-
-
-
-
