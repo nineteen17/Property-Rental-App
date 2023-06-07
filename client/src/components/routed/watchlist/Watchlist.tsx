@@ -12,7 +12,8 @@ const Watchlist = () => {
         <h3>Watchlist:</h3>
         {userProfile?.wishlist?.map((property: any, index: any) => (
           <div key={index}>
-            <Link to={`/property/${property._id}`}>{property.name}</Link>
+            <Link to={`/property/${property._id}`}>{property.name}{property.location["address"]}</Link>
+            <img src={property.imgUrls[0]} alt="property" />
           </div>
         ))}
       </div>
