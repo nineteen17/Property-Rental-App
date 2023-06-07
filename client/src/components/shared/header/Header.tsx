@@ -53,7 +53,7 @@ const handleRent = () => {
         {user && userProfile && (
           <>
             <div className="Header__nav__item" onClick={handleLogout}>Logout</div>
-            <div className="Header__nav__item">Hi {userProfile.name}!</div>
+            <div className="Header__nav__item" style={{color:"rgb(118, 168, 212)"}} >Hi {userProfile.name}!</div>
           </>
         )}
         {user === null && 

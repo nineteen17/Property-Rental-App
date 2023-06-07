@@ -4,6 +4,8 @@ import {FaBed, FaShower} from 'react-icons/fa'
 import {MdOutlineGarage, MdPets} from 'react-icons/md'
 import {Link} from 'react-router-dom';
 import { useAddToWishlist } from '../../../hooks/useAuth';
+
+
 const ListingItem = ({ listing }: { listing: Listing }) => {
   const addToWishlistMutation = useAddToWishlist();
 
