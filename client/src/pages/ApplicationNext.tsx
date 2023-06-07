@@ -27,12 +27,14 @@ const ApplicationNext = () => {
                 type="text"
                 name="landLordName"
                 placeholder="Type here"
+                required
                 />
                 <p>Landlord phone number</p>
                 <input
                 type="text"
                 name="landLordPhone"
                 placeholder="Type here"
+                required
                 />
             </div>
 
@@ -42,12 +44,14 @@ const ApplicationNext = () => {
                 type="text"
                 name="landLordEmail"
                 placeholder="Type here"
+                required
                 />
                 <p>Preferred contact type</p>
                 <input
                 type="text"
                 name="preferContactType"
                 placeholder="Type here"
+                required
                 />
             </div>
         </div>
@@ -66,12 +70,14 @@ const ApplicationNext = () => {
                 type="text"
                 name="otherName"
                 placeholder="Type here"
+                required
                 />
                 <p>Phone number</p>
                 <input
                 type="text"
                 name="otherPhone"
                 placeholder="Type here"
+                required
                 />
             </div>
             <div className="applicationNext__form__container__column">
@@ -80,12 +86,14 @@ const ApplicationNext = () => {
                 type="text"
                 name="otherEmail"
                 placeholder="Type here"
+                required
                 />
                 <p>Relationship</p>
                 <input
                 type="text"
                 name="relationship"
                 placeholder="Type here"
+                required
                 />
             </div>
         </div>

@@ -28,6 +28,7 @@ const Application = () => {
               name="name"
               className="applicationContainer__form__start__column--input"
               placeholder="Type here"
+              required
             />
 
             <p>Phone Number</p>
@@ -36,6 +37,7 @@ const Application = () => {
               name="phone"
               className="applicationContainer__form__start__column--input"
               placeholder="Type here"
+              required
             />
 
             <p>When can you move into the property?</p>
@@ -44,6 +46,7 @@ const Application = () => {
               name="moveInDate"
               className="applicationContainer__form__start__column--input"
               placeholder="dd/mm/yy"
+              required
             />
             <p>How long do you want the property for?</p>
             <input
@@ -51,6 +54,7 @@ const Application = () => {
               name="contractPeriod"
               className="applicationContainer__form__start__column--input"
               placeholder="dd/mm/yy"
+              required
             />
           </div>
           <div className="applicationContainer__form__start__column">
@@ -60,6 +64,7 @@ const Application = () => {
               name="email"
               className="applicationContainer__form__start__column--input"
               placeholder="Type here"
+              required
             />
             <p>Preferred tenancy type</p>
             <input
@@ -74,6 +79,7 @@ const Application = () => {
               name="peopleNumber"
               className="applicationContainer__form__start__column--input"
               placeholder="Type here"
+              required
             />
             <p>Have you viewed the property?</p>
             <input
@@ -81,6 +87,7 @@ const Application = () => {
               name="viewStatus"
               className="applicationContainer__form__start__column--input"
               placeholder="Yes or No"
+              required
             />
           </div>
         </div>
@@ -105,6 +112,7 @@ const Application = () => {
                 type="text"
                 name="coName"
                 placeholder="Type here"
+                required
                 />
             </div>
             <div className="applicationContainer__form__coApplicant__column">
@@ -113,6 +121,7 @@ const Application = () => {
                 type="text"
                 name="coEmail"
                 placeholder="Type here"
+                required
                 />
             </div>
         </div>
@@ -127,6 +136,7 @@ const Application = () => {
                     type="text"
                     name="pets"
                     placeholder="Yes or No"
+                    required
                     />
         </div>
 
@@ -140,6 +150,7 @@ const Application = () => {
                 type="text"
                 name="smoking"
                 placeholder="Yes or No"
+                required
                 />
         </div>
         <div className="applicationContainer__form__btn">
