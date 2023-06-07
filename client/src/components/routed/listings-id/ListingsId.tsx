@@ -1,5 +1,5 @@
 import { usePropertyId } from "../../../hooks/useListings";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
 import "./ListingsId.scss"; // Assuming you have this file for styling
 declare const Microsoft: any;
@@ -13,6 +13,7 @@ const ListingsId = () => {
   const { id } = useParams();
   const { data: property, isLoading, error } = usePropertyId(id);
   const mapRef = useRef(null); // Add this line
+  const navigate = useNavigate();
 
   const [bingLoaded, setBingLoaded] = useState(!!window.Microsoft);
 
@@ -84,8 +85,8 @@ const ListingsId = () => {
             </div>
           </div>
           <div className="right-side">
-            <button>Apply here</button>
-            <button>Book a viewing</button>
+            <button onClick={() => navigate(`/apply/${id}`)}>Apply here</button>
+            <button onClick={() => navigate(`/booking/${id}`)}>Book a viewing</button>
             <div ref={mapRef} style={{ width: "400px", height: "250px" }}></div>
           </div>
         </div>

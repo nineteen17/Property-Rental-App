@@ -1,13 +1,18 @@
 import React from "react";
 import "./Application.scss";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { usePropertyId } from "../hooks/useListings";
+import SmallListingItem from "../components/routed/properties/SmallListingItem";
 
 const Application = () => {
     const navigate = useNavigate();
+    const { id } = useParams();
+  const { data: property, isLoading, error } = usePropertyId(id);
   return (
     <div className="applicationContainer">
       <div className="applicationContainer__header">
         <h2>Apply for a property</h2>
+        <SmallListingItem listing={property}/>
       </div>
       <form className="applicationContainer__form">
       
@@ -139,7 +144,7 @@ const Application = () => {
         </div>
         <div className="applicationContainer__form__btn">
             <button
-                onClick={() => {navigate('/apply-next')}}
+                onClick={() => {navigate(`/apply-next/${id}`)}}
             >
                 Next
             </button>

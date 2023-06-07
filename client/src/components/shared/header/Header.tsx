@@ -45,7 +45,7 @@ const handleRent = () => {
       </div>
       <div className="Header__nav">
         <div className="Header__nav__item">Services</div>
-        <div className="Header__nav__item" onClick={() => {navigate('/apply')}}>Apply</div>
+        <div className="Header__nav__item">Apply</div>
         <div className="Header__nav__item" onClick={handleRent} >Listings</div>
         <div className="Header__nav__item">About Us</div>
         <div className="Header__nav__item">Contact</div>

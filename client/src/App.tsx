@@ -27,9 +27,9 @@ function App() {
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/rent" element={<CurrentListings />} />
           <Route path="/properties/:id" element={<ListingsId /> } />
-          <Route path="/apply" element={<Application />} />
-          <Route path="/apply-next" element={<ApplicationNext />} />
-          <Route path="/booking" element={<Booking />} />
+          <Route path="/apply/:id" element={<Application />} />
+          <Route path="/apply-next/:id" element={<ApplicationNext />} />
+          <Route path="/booking/:id" element={<Booking />} />
         </Routes>
         <Footer />
       </div>

@@ -1,0 +1,25 @@
+.smallListingItem{
+    display: flex;
+    width: 80%;
+    margin-left: 40%;
+    margin-bottom: 20px;
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    .smallListingItem__left{
+        margin-right: 20px;
+        img{
+            width:200px;
+            height:150px;
+            border-radius: 10px;
+        }
+    }
+    .smallListingItem__right{
+        text-align: start;
+        .smallListingItem__right__icons{
+            
+            .smallListingItem__right__icons-icon{
+                margin-right: 20px;
+            }
+        }
+    }
+}

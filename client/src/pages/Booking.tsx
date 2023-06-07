@@ -1,13 +1,18 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Booking.scss";
+import { usePropertyId } from "../hooks/useListings";
+import SmallListingItem from "../components/routed/properties/SmallListingItem";
 
 const Booking = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
+  const { data: property, isLoading, error } = usePropertyId(id);
   return (
     <div className="booking">
       <div className="booking__header">
         <h2>Booking a viewing</h2>
+        <SmallListingItem listing={property}/>
       </div>
 
       <form className="booking__form">
