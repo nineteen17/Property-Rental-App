@@ -61,7 +61,11 @@ const ListingsId = () => {
       <div className="property-details">
         <div className="top">
           <div className="images">
-            <h1>{property.location["address"]}{property.location["suburb"]}, {property.location["city"]}</h1>
+          <h1>
+  <span className="address">{property.location["address"]}</span>, 
+  <span className="location"> {property.location["suburb"]}, {property.location["city"]}</span>
+</h1>
+
             <img
               className="main-image"
               src={selectedImage}

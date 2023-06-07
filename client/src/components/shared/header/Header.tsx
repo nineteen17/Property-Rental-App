@@ -50,7 +50,7 @@ const handleRent = () => {
         <div className="Header__nav__item">About Us</div>
         <div className="Header__nav__item">Contact</div>
         <div className="Header__nav__item" onClick={handleWishlist}>Watchlist</div>
-        {user && (
+        {user && userProfile && (
           <>
             <div className="Header__nav__item" onClick={handleLogout}>Logout</div>
             <div className="Header__nav__item">Hi {userProfile.name}!</div>
