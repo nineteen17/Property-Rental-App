@@ -1,8 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import "./Home.scss";
 
+import { useNavigate } from "react-router-dom";
+import homeImg from "../../../assets/tristan-dixon-H9ZJLVkkjzs-unsplash.jpg";
+
 const Home = () => {
-  const navigate = useNavigate();
+const navigate = useNavigate();
+
+const handleRent = () => {
+  navigate("/rent");
+};
   return (
     <div className="Home">
       <div className="Home__background-image">
@@ -17,6 +24,7 @@ const Home = () => {
         >
           View our listings for rent
         </div>
+        <div className="Home__buttons-container__button" onClick={handleRent} >View our listings for rent</div>
         <div className="Home__buttons-container__button">Our services</div>
       </div>
       <div className="Home__awards-video-container">
@@ -63,6 +71,21 @@ const Home = () => {
             <button>Submit</button>
           </form>
         </div>
+        </div>
+        <div className="Home__form-container">
+          <div className="Home__form-container__image">
+            <img src={homeImg} />
+          </div>
+          <div className="Home__form-container__form">
+            <h2>Need help ?</h2>
+            <form>
+              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Email" />
+              <input type="text" placeholder="Message" />
+              <textarea placeholder="Message" />
+              <button>Submit</button>
+            </form>
+          </div>
       </div>
     </div>
   );

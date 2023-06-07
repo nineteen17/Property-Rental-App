@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type User = { _id: string; name: string; email: string } | null;
+type User = { _id: string; name: string; email: string; watchlist: any } | null;
 
 interface Store {
   user: User;
@@ -25,6 +25,8 @@ export const useUserStore = create<Store>((set) => {
   return {
     user,
     setUser: (user: User) => {
+      console.log("User before storing in localStorage: ", user);
+      
       localStorage.setItem('user', JSON.stringify(user));
       set({ user });
     },
