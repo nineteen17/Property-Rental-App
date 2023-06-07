@@ -1,7 +1,6 @@
 .Watchlist {
-  height: 80vh;
   background-color: black;
-  height: 82.5vh;
+  min-height: 85.5vh;
   display: flex;
   justify-content: center;
 
@@ -10,17 +9,25 @@
     flex-direction: row;
     align-items: start;
     justify-content: space-between;
-    height: 90%;
-    width: 66%;
+    min-height: 90%;
+    width: 86%;
     background-color: white;
-    margin-left: 7rem;
-    margin-right: 7rem;
+    margin-bottom: 5rem;
+    padding-bottom: 5rem;
 
     .Watchlist__container__left {
       display: flex;
       flex-direction: row;
       padding-left: 1rem;
       padding-top: 1rem;
+
+      .Watchlist__container__left__breadcrumb__link{
+         
+        &:hover{
+          color: rgb(118, 168, 212);
+          cursor: pointer;
+        }
+      }
     }
     .Watchlist__container__right {
       display: flex;
@@ -30,6 +37,10 @@
       .Watchlist__container__right__info {
         display: flex;
         flex-direction: row;
+        height: 90%;
+        text-decoration: none;
+        color: black;
+        width: 60%;
 
         
 
@@ -39,7 +50,7 @@
           padding-left: 1rem;
           margin-top: 1rem;
           background-color: rgb(244, 244, 244);
-          width: 40%;
+          width: 80%;
           border-top-right-radius: 10px;
           border-bottom-right-radius: 10px;
           

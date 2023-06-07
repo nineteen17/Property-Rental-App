@@ -9,6 +9,7 @@ const handleRent = () => {
   navigate("/rent");
 };
   return (
+  <div className="Home-container" >
     <div className="Home">
       <div className="Home__background-image">
         <h1>Helping clients to achieve </h1>
@@ -53,7 +54,7 @@ const handleRent = () => {
           </div>
       </div>
     </div>
- 
+    </div>
   );
 };
 
