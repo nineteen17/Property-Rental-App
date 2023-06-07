@@ -26,27 +26,35 @@
       }
     }
 
-    .listingItemContainer__right-section {
-        width: 50%;
-      .listingItemContainer__right-section__titleContainer {
-        display: flex;
-        .listingItemContainer__right-section__titleContainer--title {
-          font-size: 30px;
-          font-weight: bold;
-          margin-top: 15px;
-        }
-        .listingItemContainer__right-section__titleContainer--location {
-          font-size: 30px;
-          margin-top: -30px;
-        }
 
-        .listingItemContainer__right-section__titleContainer--watchlistIcon {
-          width: 30px;
-          height: 30px;
-          position: relative;
-          margin-left: auto;
-          margin-right: 10px;
-          margin-top: 20px;
+    .listingItemContainer__right-section{
+        .listingItemContainer__right-section__titleContainer{
+            display: flex;
+            .listingItemContainer__right-section__titleContainer--title{
+                font-size: 30px;
+                font-weight: bold;
+                margin-top: 15px;
+            }
+            .listingItemContainer__right-section__titleContainer--location{
+                font-size: 30px;
+                margin-top: -30px;
+            }
+    
+            .listingItemContainer__right-section__titleContainer--watchlistIcon{
+                width: 30px;
+                height: 30px;
+                position: relative;
+                margin-left: auto;
+                margin-right: 10px;
+                margin-top: 20px;
+
+                &:hover{
+                    cursor: pointer;
+                    opacity: 0.4;
+                    color: rgb(118, 168, 212);
+                }
+            }
+
         }
       }
 

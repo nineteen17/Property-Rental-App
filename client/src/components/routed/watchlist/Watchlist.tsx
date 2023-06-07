@@ -1,20 +1,43 @@
 import { Link } from 'react-router-dom';
 import { useUserProfile } from '../../../hooks/useAuth';
 import { useUserStore } from '../../../store/Store';
-
+import './Watchlist.scss';
+import { useNavigate } from 'react-router-dom';
 const Watchlist = () => {
   const { data: userProfile } = useUserProfile();
   const { user } = useUserStore();
+  const navigate = useNavigate();
+
+const handleHome = () => {  
+  navigate(`/`);
+}
 
   if (user) {
     return (
-      <div>
-        <h3>Watchlist:</h3>
+      <div className='Watchlist' >
+        <div className='Watchlist__container'>
+        <div className="Watchlist__container__left">
+        <span className="Login__breadcrumb__link" onClick={handleHome } >Home</span> /
+        <span className="Login__breadcrumb__link">Login</span>
+        </div>
+        <div className='Watchlist__container__right'>
+          <h1>Your Watchlist</h1>
         {userProfile?.wishlist?.map((property: any, index: any) => (
-          <div key={index}>
-            <Link to={`/property/${property._id}`}>{property.name}</Link>
+          <div key={index} >
+            <Link to={`/property/${property._id}`} className='Watchlist__container__right__info'>
+               <div className='Watchlist__container__right__info__img'>
+                <img className='img' src={property.imgUrls[0]} alt="property" />
+               </div>
+               <div className='Watchlist__container__right__info__text'>
+                 <p>{property.name}</p>
+                 <p>{property.location["address"]}</p>
+               </div>
+
+            </Link>
           </div>
         ))}
+        </div>
+        </div>
       </div>
     );
   } else {

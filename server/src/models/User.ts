@@ -1,15 +1,8 @@
 import mongoose, { Schema, Document } from 'mongoose';
 import bcrypt from 'bcrypt';
-import { IProperty } from '../types/Property';
+import { IUser }from '../types/types';
 
 
-interface IUser extends Document {
-  name: string;
-  email: string;
-  password: string;
-  matchPassword: (enteredPassword: string) => Promise<boolean>;
-  wishlist?: IProperty[];
-}
 
 const userSchema: Schema<IUser> = new mongoose.Schema(
   {

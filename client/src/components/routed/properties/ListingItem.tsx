@@ -3,8 +3,19 @@ import './ListingItem.scss'
 import {FaBed, FaShower} from 'react-icons/fa'
 import {MdOutlineGarage, MdPets} from 'react-icons/md'
 import {Link} from 'react-router-dom';
+import { useAddToWishlist } from '../../../hooks/useAuth';
+
 
 const ListingItem = ({ listing }: { listing: Listing }) => {
+  const addToWishlistMutation = useAddToWishlist();
+
+  const handleAddToWishlist = (event: React.MouseEvent) => {
+    event.stopPropagation();
+    event.preventDefault();
+
+    addToWishlistMutation.mutate(listing._id);
+  };
+  
   return (
     <Link to={`/properties/${listing._id}`} className="LinkListingItemContainer"> 
     <div key={listing._id} id={listing._id} className="listingItemContainer">
@@ -26,7 +37,7 @@ const ListingItem = ({ listing }: { listing: Listing }) => {
               </p>
           </div>
           
-            <a>
+            <a onClick={handleAddToWishlist} >
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/OOjs_UI_icon_watchlist-ltr.svg/120px-OOjs_UI_icon_watchlist-ltr.svg.png?20221209154142" 
                   alt="watchlist" 
                   className="listingItemContainer__right-section__titleContainer--watchlistIcon"
