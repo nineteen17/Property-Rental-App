@@ -1,10 +1,10 @@
-.Login-bg {
+.Register-bg {
   height: 80vh;
   background-color: black;
   height: 82.5vh;
   display: flex;
   justify-content: center;
-  .Login {
+  .Register {
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -14,7 +14,7 @@
     background-color: white;
     margin-bottom: 17rem !important;
 
-    .Login__breadcrumb {
+    .Register__breadcrumb {
       background-color: white;
       display: flex;
       justify-content: flex-start;
@@ -22,7 +22,7 @@
       padding-top: 3rem;
       padding-left: 2rem;
 
-      .Login__breadcrumb__link {
+      .Register__breadcrumb__link {
         color: #333;
         text-decoration: none;
         font-weight: 600;
@@ -33,14 +33,14 @@
       }
     }
 
-    .Login__form {
+    .Register__form {
       background-color: #ffffff;
       width: 75%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       padding-top: 4.5rem;
-      padding-left: 22rem;
+      padding-left: 18rem;
       h2 {
         color: #333;
         margin-bottom: 20px;
@@ -56,22 +56,22 @@
           font-size: 1rem;
         }
         input {
-          margin-bottom: 4rem;
+          margin-bottom: 2rem;
           border: 1px solid #ccc;
           border-radius: 10px;
           width: 40%;
-          height: 3rem;  
+          height: 3rem;
           &:focus {
             border-color: #007bff;
           }
         }
-        .forgot{
-            input{
-                color: red;
-                margin-bottom: 2rem;
-            }
+        .forgot {
+          input {
+            color: red;
+            margin-bottom: 2rem;
+          }
         }
-        .Login__form__button-container {
+        .Register__form__button-container {
           display: flex;
           justify-content: space-between;
           margin-bottom: 2rem;
@@ -86,14 +86,6 @@
               color: #ffffff;
               &:hover {
                 background-color: rgb(88, 138, 182);
-                cursor: pointer;
-              }
-            }
-            &:last-child {
-              background-color: #f8f9fa;
-              color: #333;
-              &:hover {
-                background-color: #e2e6ea;
                 cursor: pointer;
               }
             }
