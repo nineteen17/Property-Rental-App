@@ -1,0 +1,31 @@
+.successBooking{
+    width: 100%;
+    background-color: #f3f3f3;
+    padding: 20px;
+    text-align: center;
+    .successBooking__iconContainer{
+        text-align: end;
+        font-size: 40px;
+        .successBooking__iconContainer--icon{
+            cursor: pointer;
+            &:hover{
+                background-color: white;
+                transform: scale(1.02);
+            }
+        }
+    }
+
+    .successBooking_info{
+        span{
+            color: red;
+            cursor: pointer;
+        }
+    }
+
+    .successBooking__listing{
+        margin-top: 50px;
+        margin-left: -250px;
+        margin-right: 210px;
+    }
+   
+}

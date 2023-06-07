@@ -122,12 +122,12 @@ const ApplicationNext = () => {
         </div>
         <div className="applicationNext__form__btn">
             <button
-                onClick={() => {navigate('/apply')}}
+                onClick={() => {navigate(`/apply/${id}`)}}
             >
                 Back
             </button>
             <button
-                onClick={() => {navigate('/')}}
+                onClick={() => {navigate(`/apply/success/${id}`)}}
             >
                 Submit
             </button>

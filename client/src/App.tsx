@@ -14,6 +14,8 @@ import ListingsId from "./components/routed/listings-id/ListingsId";
 import Application from "./pages/Application";
 import ApplicationNext from "./pages/ApplicationNext";
 import Booking from "./pages/Booking";
+import SuccessApplyPage from "./pages/SuccessApplyPage";
+import SuccessBookingPage from "./pages/SuccessBookingPage";
 
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
           <Route path="/apply/:id" element={<Application />} />
           <Route path="/apply-next/:id" element={<ApplicationNext />} />
           <Route path="/booking/:id" element={<Booking />} />
+          <Route path="/apply/success/:id" element={<SuccessApplyPage />} />
+          <Route path="/booking/success/:id" element={<SuccessBookingPage />} />
         </Routes>
     
       </div>
