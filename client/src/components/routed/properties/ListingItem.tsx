@@ -17,7 +17,7 @@ const ListingItem = ({ listing }: { listing: Listing }) => {
   };
   
   return (
-    <Link to={`/properties/${listing._id}`}> 
+    <Link to={`/properties/${listing._id}`} className="LinkListingItemContainer"> 
     <div key={listing._id} id={listing._id} className="listingItemContainer">
       <div className="listingItemContainer__left-section">
         <a href={listing.imgUrls[0]}>

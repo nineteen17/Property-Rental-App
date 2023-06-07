@@ -58,4 +58,3 @@ const handleRent = () => {
 };
 
 export default Home;
-

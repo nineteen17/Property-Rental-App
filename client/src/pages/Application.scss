@@ -1,0 +1,140 @@
+.applicationContainer {
+  background-color: white;
+  margin-left: 7%;
+  margin-right: 7%;
+
+  .applicationContainer__header {
+    align-items: center;
+    text-align: center;
+    margin-right: 430px;
+    padding-top: 50px;
+  }
+
+  .applicationContainer__form {
+    .applicationContainer__form__title {
+      background-color: #f3f3f3;
+      width: 65.8%;
+      margin-left: 18%;
+      padding: 5px;
+      h3 {
+        margin-left: 80px;
+      }
+    }
+
+    .applicationContainer__form__start {
+      display: flex;
+      background-color: #f3f3f3;
+      width: 65%;
+      margin-left: 18%;
+      padding: 10px;
+
+      .applicationContainer__form__start__column {
+        width: 50%;
+        margin-left: 80px;
+        margin-bottom: 20px;
+
+        .applicationContainer__form__start__column--input {
+          margin-top: -10px;
+          width: 250px;
+          height: 40px;
+          padding: 5px 5px;
+          border-radius: 5px;
+          border: 1px solid gray;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .applicationContainer__form__identity {
+      background-color: #f3f3f3;
+      width: 51%;
+      margin-left: 18%;
+      padding: 40px 100px;
+      margin-top: 20px;
+      font-size: 18px;
+      margin-bottom: 20px;
+      .applicationContainer__form__identity__textbox {
+        border: 1px solid gray;
+        border-radius: 10px;
+        padding: 20px;
+
+        button {
+          border: 1px solid red;
+          font-size: 18px;
+          border-radius: 20px;
+          padding: 10px 30px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .applicationContainer__form__coApplicant {
+      display: flex;
+      background-color: #f3f3f3;
+      width: 65%;
+      margin-left: 18%;
+      padding: 10px;
+      margin-bottom: 20px;
+
+      .applicationContainer__form__coApplicant__column {
+        width: 50%;
+        margin-left: 80px;
+        margin-bottom: 20px;
+
+        input {
+          margin-top: -10px;
+          width: 250px;
+          height: 40px;
+          padding: 5px 5px;
+          border-radius: 5px;
+          border: 1px solid gray;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .applicationContainer__form__petsSmoke {
+      background-color: #f3f3f3;
+      width: 65%;
+      margin-left: 18%;
+      padding: 10px;
+      margin-bottom: 20px;
+      p {
+        margin-left: 80px;
+      }
+      input {
+        margin-left: 80px;
+        margin-top: -10px;
+        width: 250px;
+        height: 40px;
+        padding: 5px 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        margin-bottom: 10px;
+      }
+    }
+
+    .applicationContainer__form__btn {
+      padding: 50px;
+      text-align: right;
+      button {
+        margin-top: 0px;
+        margin-right: 140px;
+        width: 20%;
+        height: 45px;
+        border-radius: 30px;
+        background-color: #76a8d4;
+        font-size: larger;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.01);
+          box-shadow: 2px 2px 2px rgb(72, 86, 91);
+        }
+      }
+    }
+
+  }
+}
