@@ -2,14 +2,15 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 
 export const usePropertyId = (id: any) => {
+  const baseUrl = import.meta.env.VITE_LOCAL_URL||import.meta.env.VITE_BACKEND_URL
   return useQuery(
     ['property', id], 
     async () => {
-      const response = await axios.get(`${import.meta.env.VITE_LOCAL_URL}/api/properties/${id}`);
+      const response = await axios.get(`${baseUrl}/api/properties/${id}`);
       return response.data;
     },
     { 
-      enabled: !!id // This ensures that the query does not run until the `id` is truthy
+      enabled: !!id 
     }
   );
 };
