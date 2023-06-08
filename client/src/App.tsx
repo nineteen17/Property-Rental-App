@@ -7,7 +7,7 @@ import Header from "./components/shared/header/Header";
 import Home from "./components/routed/home/Home";
 
 import Login from "./components/routed/login/Login";
-//import Register from "./components/routed/register/Register";
+import Register from "./components/routed/register/Register";
 import Watchlist from "./components/routed/watchlist/Watchlist";
 import CurrentListings from "./pages/CurrentListings";
 import ListingsId from "./components/routed/listings-id/ListingsId";
@@ -16,6 +16,8 @@ import ApplicationNext from "./pages/ApplicationNext";
 import Booking from "./pages/Booking";
 import SuccessApplyPage from "./pages/SuccessApplyPage";
 import SuccessBookingPage from "./pages/SuccessBookingPage";
+import RegisterSuccess from "./components/routed/register-success/RegisterSuccess";
+
 
 
 function App() {
@@ -34,8 +36,9 @@ function App() {
           <Route path="/booking/:id" element={<Booking />} />
           <Route path="/apply/success/:id" element={<SuccessApplyPage />} />
           <Route path="/booking/success/:id" element={<SuccessBookingPage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/register-success" element={<RegisterSuccess />} />
         </Routes>
-    
       </div>
     </QueryClientProvider>
   );
