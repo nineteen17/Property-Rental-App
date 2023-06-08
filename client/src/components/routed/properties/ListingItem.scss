@@ -1,72 +1,81 @@
-.listingItemContainer{
+.LinkListingItemContainer {
+  text-decoration: none;
+  color: black;
+
+  .listingItemContainer {
     display: flex;
     width: 90%;
     border-radius: 10px;
-    background-color: #F7F6F7;
+    background-color: #f7f6f7;
     margin: 40px 50px;
     margin-bottom: 80px;
     height: 350px;
     border: 1px solid #adacac;
 
-    &:hover{
-        transform: scale(1.03);
+    &:hover {
+      transform: scale(1.03);
     }
 
-
-    .listingItemContainer__left-section{
-        padding-right: 30px;
-        .listingItemContainer--Img{
-            width:400px;
-            height:350px;
-            border-radius: 10px;
-        }
+    .listingItemContainer__left-section {
+      padding-right: 30px;
+      width: 50%;
+      .listingItemContainer--Img {
+        width: 100%;
+        height: 350px;
+        border-radius: 10px;
+      }
     }
 
-    .listingItemContainer__right-section{
-        .listingItemContainer__right-section__titleContainer{
-            display: flex;
-            .listingItemContainer__right-section__titleContainer--title{
-                font-size: 30px;
-                font-weight: bold;
-                margin-top: 15px;
-            }
-            .listingItemContainer__right-section__titleContainer--location{
-                font-size: 30px;
-                margin-top: -30px;
-            }
-    
-            .listingItemContainer__right-section__titleContainer--watchlistIcon{
-                width: 30px;
-                height: 30px;
-                position: relative;
-                margin-left: auto;
-                margin-right: 10px;
-                margin-top: 20px;
-            }
+    .listingItemContainer__right-section {
+      .listingItemContainer__right-section__titleContainer {
+        display: flex;
+        .listingItemContainer__right-section__titleContainer--title {
+          font-size: 30px;
+          font-weight: bold;
+          margin-top: 15px;
         }
-        
-
-        .listingItemContainer__right-section__detailsContainer{
-            display: flex;
-            margin-top: 140px;
-
-            .listingItemContainer__right-section__section__detailsContainer__details{
-                display: flex;
-                font-size: 22px;
-                margin-right: 30px;
-
-                .listingItemContainer__right-section__detailsContainer__details--icons{
-                    margin-right: 10px;
-                }
-            }
-            .listingItemContainer__right-section__section__detailsContainer__price{
-                font-size: 22px;
-                position: relative;
-                margin-left: auto;
-                margin-right: 20px;
-                
-            }
+        .listingItemContainer__right-section__titleContainer--location {
+          font-size: 30px;
+          margin-top: -30px;
         }
+
+        .listingItemContainer__right-section__titleContainer--watchlistIcon {
+          width: 30px;
+          height: 30px;
+          position: relative;
+          margin-left: auto;
+          margin-right: 10px;
+          margin-top: 20px;
+
+          &:hover {
+            cursor: pointer;
+            opacity: 0.4;
+            color: rgb(118, 168, 212);
+          }
+        }
+      }
     }
-    
+
+    .listingItemContainer__right-section__detailsContainer {
+      display: flex;
+      margin-top: 30%;
+
+      .listingItemContainer__right-section__section__detailsContainer__details {
+        display: flex;
+        font-size: 22px;
+        margin-right: 30px;
+
+        .listingItemContainer__right-section__detailsContainer__details--icons {
+          margin-right: 10px;
+        }
+      }
+      .listingItemContainer__right-section__section__detailsContainer__price {
+        font-size: 22px;
+        position: relative;
+        margin-left: auto;
+        margin-right: 20px;
+      }
+    }
+  }
+
 }

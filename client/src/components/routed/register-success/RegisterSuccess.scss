@@ -1,0 +1,37 @@
+.RegisterSuccess-bg {
+    height: 80vh;
+    background-color: black;
+    height: 82.5vh;
+    display: flex;
+    justify-content: center;
+    .RegisterSuccess {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      height: 90%;
+      width: 86%;
+      background-color: white;
+      margin-left: 7rem;
+      margin-right: 7rem;
+      margin-bottom: 17rem !important;
+
+      .success-message{
+       font-size: 3rem;
+      }
+
+      .login-button{
+        border-radius: 10px;
+        padding: 1rem;
+        font-size: 3rem;
+        color: white;
+        background-color: rgb(118, 168, 212);
+
+        &:hover{
+          cursor: pointer;
+          background-color: rgb(118, 168, 212, 0.8);
+        }
+      }
+
+    }
+}

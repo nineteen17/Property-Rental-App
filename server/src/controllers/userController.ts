@@ -132,3 +132,26 @@ export const addToWishlist = asyncHandler(async (req: any, res: Response) => {
     }
   });
   
+
+  export const removeFromWishlist = asyncHandler(async (req: any, res: Response) => {
+    const { propertyId } = req.params;
+    const user = await User.findById(req.user._id);
+  
+    if (user && user.wishlist) {
+      const index = user.wishlist.indexOf(propertyId);
+  
+      if (index !== -1) {
+        user.wishlist.splice(index, 1);
+        await user.save();
+        res.status(200).json({ message: 'Property removed from wishlist' });
+      } else {
+        res.status(400);
+        throw new Error('Property not found in wishlist');
+      }
+    } else {
+      res.status(404);
+      throw new Error('User not found');
+    }
+  });
+  
+  

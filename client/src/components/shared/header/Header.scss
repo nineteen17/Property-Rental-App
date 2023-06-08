@@ -10,11 +10,11 @@
 
   .Header__logo {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    margin-left: -150px;
+    margin-right: 150px;
     align-items: center;
     font-size: 2rem;
-    margin: 0;
+    
     color: white;
     img {
       height: 3.5rem;
@@ -25,19 +25,18 @@
 
   .Header__nav {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
     font-size: 2rem;
     margin-right: 10rem;
 
     .Header__nav__item {
       margin: 0 1rem;
-      padding: 0;
       text-decoration: none;
       color: white;
       font-size: 1.2rem;
       transition: color 0.5s ease;
+      white-space: nowrap; 
       &:hover {
         color: rgb(118, 168, 212);
         cursor: pointer;

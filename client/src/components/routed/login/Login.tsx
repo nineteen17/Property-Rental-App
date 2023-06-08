@@ -22,7 +22,9 @@ const Login: React.FC = () => {
   const handleHome = () => {
     navigate("/");
   };
-
+const handleCreateAccount = () => {
+  navigate("/register");
+}
   return (
     <div className="Login-bg">
     <div className="Login">
@@ -52,7 +54,7 @@ const Login: React.FC = () => {
           <label className="forgot" >Forgot password ?</label>
           <span className="Login__form__button-container">
           <button type="submit">Log In</button>
-          <button type="button">Create Account</button>
+          <button type="button" onClick={handleCreateAccount} >Create Account</button>
           </span>
         </form>
         <label>Call 09 391 4642 for help</label>

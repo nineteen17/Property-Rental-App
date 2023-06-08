@@ -55,3 +55,12 @@ export const useAddToWishlist = () => {
     return data;
   });
 };
+
+export const useRemoveFromWishlist = () => {
+  const queryClient = useQueryClient();
+  return useMutation(async (propertyId: string) => {
+    const { data } = await axios.delete(`${baseUrl}/wishlist/${propertyId}`);
+    queryClient.invalidateQueries("userProfile");
+    return data;
+  });
+};

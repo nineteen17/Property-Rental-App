@@ -2,6 +2,7 @@ import "./Home.scss";
 import { useNavigate } from "react-router-dom";
 import homeImg from "../../../assets/tristan-dixon-H9ZJLVkkjzs-unsplash.jpg";
 
+
 const Home = () => {
 const navigate = useNavigate();
 
@@ -9,6 +10,7 @@ const handleRent = () => {
   navigate("/rent");
 };
   return (
+  <div className="Home-container" >
     <div className="Home">
       <div className="Home__background-image">
         <h1>Helping clients to achieve </h1>
@@ -53,9 +55,8 @@ const handleRent = () => {
           </div>
       </div>
     </div>
- 
+    </div>
   );
 };
 
 export default Home;
-

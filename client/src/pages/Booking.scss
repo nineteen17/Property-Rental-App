@@ -1,0 +1,108 @@
+.booking{
+    background-color: rgb(255, 255, 255);
+  margin-left: 7%;
+  margin-right: 7%;
+
+  .booking__header{
+    align-items: center;
+    text-align: center;
+    margin-right: 430px;
+    padding-top: 50px;
+  }
+
+  .booking__form{
+    .booking__form__title{
+        background-color: #f3f3f3;
+      width: 65.8%;
+      margin-left: 18%;
+      padding: 5px;
+      h3 {
+        margin-left: 80px;
+      }
+    }
+
+    .booking__form__container{
+        display: flex;
+      background-color: #f3f3f3;
+      width: 65%;
+      margin-left: 18%;
+      padding: 10px;
+      margin-bottom: 20px;
+        .booking__form__container__column{
+            width: 50%;
+            margin-left: 80px;
+            margin-bottom: 20px;
+            input {
+              margin-top: -10px;
+              width: 250px;
+              height: 40px;
+              padding: 5px 5px;
+              border-radius: 5px;
+              border: 1px solid gray;
+              margin-bottom: 10px;
+            }
+        }
+    }
+
+    .booking__form__bookTimes{
+        background-color: #f3f3f3;
+      width: 65%;
+      margin-left: 18%;
+      padding: 10px;
+      margin-bottom: 20px;
+      h3{
+        margin-left: 10%;
+      }
+        .booking__form__bookTimes__boxContainer{
+            display: flex;
+            justify-content: center;
+
+            .booking__form__bookTimes__boxContainer__box{
+                border: 1px solid gray;
+                border-radius: 5px;
+                padding: 0px 15px;
+                margin: 0px 20px;
+                cursor: pointer;
+                &:hover{
+                    background-color: #c3c3c3;
+                }
+            }
+            .booking__form__bookTimes__boxContainer__box.selected{
+              background-color: #c3c3c3;
+            }
+        }
+    }
+
+    .booking__form__checkbox{
+        display: flex;
+        margin-left: 10%;
+        width: 80%;
+        input{
+            margin-right: 20px;
+        }
+    }
+
+    .booking__form__btn{
+        padding: 50px;
+      text-align: right;
+      button {
+        margin-top: 0px;
+        margin-right: 140px;
+        width: 20%;
+        height: 45px;
+        border-radius: 30px;
+        background-color: #76a8d4;
+        font-size: larger;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.01);
+          box-shadow: 2px 2px 2px rgb(72, 86, 91);
+        }
+      }
+    }
+  }
+
+}
