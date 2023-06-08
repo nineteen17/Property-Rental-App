@@ -6,6 +6,7 @@ import {
   getUserProfile,
   updateUserProfile,
   addToWishlist, 
+  removeFromWishlist,
 } from '../controllers/userController';
 import { protect } from '../middlewares/authMiddleware';
 
@@ -16,5 +17,6 @@ router.post('/auth', authUser);
 router.post('/logout', logoutUser);
 router.route('/profile').get(protect, getUserProfile).put(protect, updateUserProfile);
 router.post('/wishlist/:propertyId', protect, addToWishlist);
+router.delete('/wishlist/:propertyId', protect, removeFromWishlist);
 
 export default router;

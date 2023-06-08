@@ -1,16 +1,21 @@
 import { Link } from 'react-router-dom';
-import { useUserProfile } from '../../../hooks/useAuth';
+import { useUserProfile, useRemoveFromWishlist } from '../../../hooks/useAuth';
 import { useUserStore } from '../../../store/Store';
 import './Watchlist.scss';
 import { useNavigate } from 'react-router-dom';
+
+
+
+
 const Watchlist = () => {
   const { data: userProfile } = useUserProfile();
   const { user } = useUserStore();
   const navigate = useNavigate();
+  const { mutate: removeFromWishlist } = useRemoveFromWishlist();
 
-const handleHome = () => {  
+  const handleHome = () => {  
   navigate(`/`);
-}
+  }
 
   if (user) {
     return (
@@ -23,7 +28,7 @@ const handleHome = () => {
         <div className='Watchlist__container__right'>
           <h1>Your Watchlist</h1>
         {userProfile?.wishlist?.map((property: any, index: any) => (
-          <div key={index} >
+          <div key={index} className="info-container">
             <Link to={`/properties/${property._id}`} className='Watchlist__container__right__info'>
                <div className='Watchlist__container__right__info__img'>
                 <img className='img' src={property.imgUrls[0]} alt="property" />
@@ -32,8 +37,8 @@ const handleHome = () => {
                  <p>{property.location["address"]}</p>
                  <p>{property.name}</p>
                </div>
-
             </Link>
+            <button className='remove-button' onClick={() => removeFromWishlist(property._id)}>x</button>
           </div>
         ))}
         </div>
