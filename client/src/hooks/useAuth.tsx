@@ -6,7 +6,7 @@ import { useUserStore } from "../store/Store";
 
 axios.defaults.withCredentials = true;
 
-const baseUrl = import.meta.env.VITE_BACKEND_URL;
+const baseUrl = import.meta.env.VITE_LOCAL_URL||import.meta.env.VITE_BACKEND_URL
 
 export const useRegisterUser = () => {
   return useMutation(async (userData: any) => {
