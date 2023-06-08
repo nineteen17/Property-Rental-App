@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { usePropertyId } from "../hooks/useListings";
 import SmallListingItem from "../components/routed/properties/SmallListingItem";
@@ -7,7 +6,7 @@ import './ApplicationNext.scss'
 const ApplicationNext = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { data: property, isLoading, error } = usePropertyId(id);
+  const { data: property} = usePropertyId(id);
   return (
     <div className="applicationNext">
         <div className="applicationNext__header">
