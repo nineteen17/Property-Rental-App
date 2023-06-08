@@ -2,6 +2,7 @@ import "./Home.scss";
 import { useNavigate } from "react-router-dom";
 import homeImg from "../../../assets/tristan-dixon-H9ZJLVkkjzs-unsplash.jpg";
 
+
 const Home = () => {
 const navigate = useNavigate();
 
