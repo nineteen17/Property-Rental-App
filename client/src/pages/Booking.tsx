@@ -7,7 +7,7 @@ import { useState } from "react";
 const Booking = () => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const { data: property, isLoading, error } = usePropertyId(id);
+  const { data: property} = usePropertyId(id);
   const [selectedBox, setSelectedBox] = useState<number | null>(null);
 
   const handleBoxClick = (boxIndex:number) => {
