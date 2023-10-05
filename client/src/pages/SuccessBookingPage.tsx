@@ -6,7 +6,8 @@ import './SuccessBookingPage.scss'
 
 const SuccessBookingPage = () => {
     const { id } = useParams();
-    const { data: property } = usePropertyId(id);
+    const { data: property} = usePropertyId(id);
+
     return (
       <div className="successBookingPage">
         <div className="successBookingPage__container">

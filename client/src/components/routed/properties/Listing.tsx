@@ -31,8 +31,8 @@ const Listing = ({ searchQuery }:{searchQuery:string}) => {
     <div className="listing">
       <h1 className="listing--header">Current property available</h1>
       <div className="listing__listingContainer">
-        {listingArr.map((l) => {
-          return (<ListingItem listing={l} />);
+        {listingArr.map((l,i) => {
+          return (<div key={i}><ListingItem listing={l} /></div> );
         })}
       </div>
 

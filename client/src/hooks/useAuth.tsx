@@ -6,7 +6,7 @@ import { useUserStore } from "../store/Store";
 
 axios.defaults.withCredentials = true;
 
-const baseUrl = import.meta.env.VITE_BACKEND_URL;
+const baseUrl = import.meta.env.VITE_LOCAL_URL||import.meta.env.VITE_BACKEND_URL
 
 export const useRegisterUser = () => {
   return useMutation(async (userData: any) => {
@@ -42,10 +42,15 @@ export const useLogoutUser = () => {
 };
 
 export const useUserProfile = () => {
-  return useQuery("userProfile", async () => {
-    const { data } = await axios.get(`${baseUrl}/profile`);
-    return data;
+  const { data, refetch } = useQuery("userProfile", async () => {
+    const response = await axios.get(`${baseUrl}/profile`);
+    return response.data;
+  }, {
+    onError: error => {
+      console.error("Failed to fetch user profile:", error);
+    }
   });
+  return { data, refetch };
 };
 
 export const useAddToWishlist = () => {
