@@ -58,7 +58,7 @@ const getWishlistCount = () => {
         <div className="Header__nav__item" onClick={handleRent} >Listings</div>
         <div className="Header__nav__item">About Us</div>
         <div className="Header__nav__item">Contact</div>
-        <div className="Header__nav__item" onClick={handleWishlist}>Watchlist{userProfile?.wishlist?.length > 0 && <span className="wishlist-notification">{getWishlistCount()}</span>}</div>
+        <div className="Header__nav__item" onClick={handleWishlist}>Watchlist{user && userProfile?.wishlist?.length > 0 && <span className="wishlist-notification">{getWishlistCount()}</span>}</div>
         {user && userProfile && (
           <>
             <div className="Header__nav__item" onClick={handleLogout}>Logout</div>
