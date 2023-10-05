@@ -4,7 +4,7 @@ import axios from "axios"
 import "./Listing.scss"
 
 const Listing = ({ searchQuery }:{searchQuery:string}) => {
-  const baseUrl = import.meta.env.VITE_LOCAL_URL||import.meta.env.VITE_BACKEND_URL
+  const baseUrl = import.meta.env.VITE_BACKEND_URL
   const [data, setData] = useState([])
   const [listingArr, setListingArr] = useState([])
   const [count, setCount] = useState(5)
