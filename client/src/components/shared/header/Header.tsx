@@ -38,10 +38,19 @@ const handleRent = () => {
   navigate("/rent");
 };
 
+
+const getWishlistCount = () => {
+
+  if (userProfile && userProfile.wishlist) {
+    return userProfile.wishlist.length;
+  }
+  return 0;
+}
+
   return (
     <div className="Header">
       <div className="Header__logo" onClick={handleLogo}>
-        <img src="https://metronz.co.nz/wp-content/uploads/2022/09/header-logo.svg" />
+        <img src="https://metronz.co.nz/wp-content/uploads/2023/09/logo-600x6000-1.svg" />
       </div>
       <div className="Header__nav">
         <div className="Header__nav__item">Services</div>
@@ -49,7 +58,7 @@ const handleRent = () => {
         <div className="Header__nav__item" onClick={handleRent} >Listings</div>
         <div className="Header__nav__item">About Us</div>
         <div className="Header__nav__item">Contact</div>
-        <div className="Header__nav__item" onClick={handleWishlist}>Watchlist</div>
+        <div className="Header__nav__item" onClick={handleWishlist}>Watchlist{userProfile?.wishlist?.length > 0 && <span className="wishlist-notification">{getWishlistCount()}</span>}</div>
         {user && userProfile && (
           <>
             <div className="Header__nav__item" onClick={handleLogout}>Logout</div>

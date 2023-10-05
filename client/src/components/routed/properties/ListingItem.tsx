@@ -3,18 +3,23 @@ import './ListingItem.scss'
 import {FaBed, FaShower} from 'react-icons/fa'
 import {MdOutlineGarage, MdPets} from 'react-icons/md'
 import {Link} from 'react-router-dom';
-import { useAddToWishlist } from '../../../hooks/useAuth';
-
+import { useAddToWishlist, useUserProfile  } from '../../../hooks/useAuth';
 
 const ListingItem = ({ listing }: { listing: Listing }) => {
   const addToWishlistMutation = useAddToWishlist();
+  const { refetch } = useUserProfile();
 
   const handleAddToWishlist = (event: React.MouseEvent) => {
     event.stopPropagation();
     event.preventDefault();
-
-    addToWishlistMutation.mutate(listing._id);
+  
+    addToWishlistMutation.mutate(listing._id, {
+      onSuccess: () => {
+        refetch();
+      }
+    });
   };
+  
   
   return (
     <Link to={`/properties/${listing._id}`} className="LinkListingItemContainer"> 
