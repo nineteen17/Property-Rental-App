@@ -1,4 +1,4 @@
-# Metro Property Management
+# Property-Rental-App
 
 This project is a redesign of the metro property management website. 
 The website allows users to regiser/login and view properties that are listed. 
